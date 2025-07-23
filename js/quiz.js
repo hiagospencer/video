@@ -153,7 +153,7 @@ const sampleQuizzes = [
   {
     id: "q1",
     time: 30, // 2 minutos em segundos
-    question: "Qual seu nível de experiência com neurociência?",
+    question: "Qual seu nível de experiência com Programação?",
     multiple: false,
     options: [
       { text: "Iniciante", value: 1 },
