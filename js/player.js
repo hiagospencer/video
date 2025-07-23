@@ -151,6 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-  const quiz = new VideoQuiz(video, sampleQuizzes);
+  // const quiz = new VideoQuiz(video, sampleQuizzes);
 });
 
