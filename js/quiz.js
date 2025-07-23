@@ -30,10 +30,32 @@ class VideoQuiz {
   }
 
   showAllQuizzes() {
-    this.video.pause();
-    if (this.quizzes.length > 0) {
-      this.showQuiz(this.quizzes[this.currentQuestionIndex]);
+    // Sai do fullscreen se estiver em mobile
+    if (this.isMobile() && document.fullscreenElement) {
+      document.exitFullscreen().then(() => {
+        this.showQuizAfterFullscreen();
+      }).catch(err => {
+        console.error("Erro ao sair do fullscreen:", err);
+        this.showQuiz(this.quizzes[this.currentQuestionIndex]);
+      });
+    } else {
+      this.video.pause();
+      if (this.quizzes.length > 0) {
+        this.showQuiz(this.quizzes[this.currentQuestionIndex]);
+      }
     }
+  }
+
+  showQuizAfterFullscreen() {
+    // Espera a transição do fullscreen completar
+    setTimeout(() => {
+      this.video.pause();
+      this.showQuiz(this.quizzes[this.currentQuestionIndex]);
+    }, 300);
+  }
+
+  isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
   showQuiz(quiz) {
