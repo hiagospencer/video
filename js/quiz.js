@@ -168,10 +168,10 @@ const sampleQuizzes = [
     question: "Quais desses tópicos te interessam? (Selecione vários)",
     multiple: true,
     options: [
-      { text: "Aprendizado acelerado", value: 1 },
-      { text: "Memória e retenção", value: 1 },
-      { text: "Neuroplasticidade", value: 2 },
-      { text: "Ritmos circadianos", value: 1 },
+      { text: "Desenvolvedor Frontend", value: 1 },
+      { text: "Desenvolvedor Backend", value: 1 },
+      { text: "Desenvolvedor FullStack", value: 2 },
+      { text: "Desenvolvedor Games", value: 1 },
     ],
   },
 ];
